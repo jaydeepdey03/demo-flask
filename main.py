@@ -22,15 +22,15 @@ def hey():
     return 'Hello, Jaydeep!'
 
 
-# @app.route('/predict', methods=['POST'])
-# def predict():
-#     data = request.json
-#     transformed_sms = transformText.transform_text(data['sentence'])
-#     vector_input = tfidf.transform([transformed_sms])
-#     result = model.predict(vector_input)[0]
-#     return jsonify({'result': int(result)})
-#     # print(data)
-#     # return jsonify(data)
+@app.route('/predict', methods=['POST'])
+def predict():
+    data = request.json
+    transformed_sms = transformText.transform_text(data['sentence'])
+    vector_input = tfidf.transform([transformed_sms])
+    result = model.predict(vector_input)[0]
+    return jsonify({'result': int(result)})
+    # print(data)
+    # return jsonify(data)
 
 if __name__ == "__main__":
     app.run(debug=False, host="0.0.0.0", port=5000)
