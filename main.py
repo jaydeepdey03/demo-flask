@@ -2,7 +2,7 @@ from flask import Flask, jsonify, request
 import pickle
 from Controllers import transformText
 from flask_cors import CORS
-from waitress import serve
+# from waitress import serve
 app = Flask(__name__)
 
 # Handling CORS
@@ -33,5 +33,5 @@ def predict():
     # return jsonify(data)
 
 if __name__ == "__main__":
-    # app.run(debug=False, host="0.0.0.0", port=5000)
-    serve(app, port=5000)
+    app.run(debug=False, host="0.0.0.0", port=5000)
+    # serve(app, port=5000)

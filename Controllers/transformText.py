@@ -3,6 +3,7 @@ from nltk.corpus import stopwords
 from nltk.stem.porter import PorterStemmer
 from string import punctuation
 nltk.download('stopwords')
+nltk.download('punkt')
 
 ps = PorterStemmer()
 
